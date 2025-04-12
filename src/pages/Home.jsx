@@ -1,4 +1,4 @@
-import News from "../components/News/news"
+import News from "../components/News/News"
 import Footer from "../components/Reusable/Footer"
 import Sidebar from "../components/Reusable/Sidebar"
 
