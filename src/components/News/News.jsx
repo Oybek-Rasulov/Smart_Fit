@@ -1,6 +1,6 @@
 import Search from "../Reusable/Search"
 import Title from "../Reusable/Title"
-import User from "../Reusable/user"
+import User from "../Reusable/User"
 import Content from "./Content"
 import {useData} from "../../context/Context";
 
