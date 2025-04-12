@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Search from "../Reusable/Search";
-import User from "../Reusable/user";
+import User from "../Reusable/User";
 import Title from "../Reusable/Title";
 import { useTrainers } from "../../context/TrainersContext"; // Use the custom hook to access context
 import TItem from "./TItem";
