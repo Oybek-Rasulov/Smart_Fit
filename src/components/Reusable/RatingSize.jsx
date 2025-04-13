@@ -32,7 +32,7 @@ export default function RatingSize({ handleReviewSubmit, trainerid }) {
   
     try {
       // Send the rating to the backend along with trainer ID and user ID
-      const response = await axios.post('http://localhost:3001/submitRating', {
+      const response = await axios.post('https://smartfitbackend.onrender.com/submitRating', {
         trainerId: trainerid,  // Trainer ID
         userId: userId,        // User ID
         rating: ratingValue,   // Rating value

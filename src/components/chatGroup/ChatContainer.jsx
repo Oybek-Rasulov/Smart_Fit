@@ -8,7 +8,7 @@ export default function ChatContainer({ userId }) {
 
   useEffect(() => {
     const loadGroups = async () => {
-      const res = await fetch('http://localhost:3001/api/chat-groups');
+      const res = await fetch('https://smartfitbackend.onrender.com/api/chat-groups');
       const data = await res.json();
       setGroups(data);
     };

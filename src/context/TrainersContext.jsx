@@ -10,7 +10,7 @@ export function TrainersProvider({ children }) {
   useEffect(() => {
     async function getTrainers() {
       try {
-        const response = await axios.get("http://localhost:3001/trainers");
+        const response = await axios.get("https://smartfitbackend.onrender.com/trainers");
         setTrainers(response.data); // Store trainer data in state
       } catch (error) {
         console.error("Error fetching trainers:", error);

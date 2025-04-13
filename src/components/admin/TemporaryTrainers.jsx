@@ -19,7 +19,7 @@ import {
     // Handle the "Accept" button click to move the trainer to the real trainers table
     const handleAcceptTrainer = async (trainerId) => {
       try {
-        const response = await axios.post('http://localhost:3001/accessTrainer', { trainerId });
+        const response = await axios.post('https://smartfitbackend.onrender.com/accessTrainer', { trainerId });
         if (response.data.message === 'success') {
           alert('Trainer has been accepted!');
           // Optionally, update the UI by removing the accepted trainer from the list

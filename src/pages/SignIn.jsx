@@ -80,7 +80,7 @@ export default function SignIn(props) {
       const result = await signInWithPopup(auth, googleProvider);
       const token = await result.user.getIdToken();
 
-      await fetch('http://localhost:3001/api/auth/firebase-login', {
+      await fetch('https://smartfitbackend.onrender.com/api/auth/firebase-login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ token }),
@@ -107,7 +107,7 @@ export default function SignIn(props) {
       const result = await signInWithPopup(auth, facebookProvider);
       const token = await result.user.getIdToken();
 
-      await fetch('http://localhost:3001/api/auth/firebase-login', {
+      await fetch('https://smartfitbackend.onrender.com/api/auth/firebase-login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ token }),

@@ -52,7 +52,7 @@ const TForm = () => {
     async function sendTDetails(e) {
         try{
             e.preventDefault()
-            await axios.post("http://localhost:3001/tform", formData)  
+            await axios.post("https://smartfitbackend.onrender.com/tform", formData)  
                 .then(res => setError(res.data.message))
                 .then(setFormData({name: "", phone: "", password: "", age: "", experience: "", studentNumbers: "", gender: "", uzbek: false, russian: false}))
                 .then(error === 'success' && navigate("/"))

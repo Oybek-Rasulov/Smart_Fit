@@ -20,7 +20,7 @@ function Register() {
     async function sendDetails(e) {
         try{
             e.preventDefault();
-            await axios.post("http://localhost:3001/register", user)  
+            await axios.post("https://smartfitbackend.onrender.com/register", user)  
                 .then(res => {
                     res.data.message === 'success' && navigate("/login")
                 })

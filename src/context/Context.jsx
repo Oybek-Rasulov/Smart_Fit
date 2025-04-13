@@ -10,7 +10,7 @@ function Context({children}) {
 
     useEffect(() => {
         function fetchNews() {
-          axios.get('http://localhost:3001/news')
+          axios.get('https://smartfitbackend.onrender.com/news')
             .then(response => {
               setNews(response.data)
             })

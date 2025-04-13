@@ -10,7 +10,7 @@ const ChatApp = () => {
   useEffect(() => {
     const fetchTrainers = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/api/trainers");
+        const response = await axios.get("https://smartfitbackend.onrender.com/api/trainers");
         setTrainers(response.data);
       } catch (error) {
         console.error("Error fetching trainers:", error);

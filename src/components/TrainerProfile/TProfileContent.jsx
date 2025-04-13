@@ -15,7 +15,7 @@ function TProfileContent() {
 
     const getTrainer = async () => {
       try {
-        const res = await axios.post("http://localhost:3001/trainer", { trainerid });
+        const res = await axios.post("https://smartfitbackend.onrender.com/trainer", { trainerid });
         setTrainer(res.data); // Assuming response is an object with trainer details
       } catch (error) {
         console.error('Error fetching trainer data:', error);
@@ -28,7 +28,7 @@ function TProfileContent() {
   useEffect(() => {
     const fetchAvgRating = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/ratings/${trainerid}`);
+        const response = await axios.get(`https://smartfitbackend.onrender.com/ratings/${trainerid}`);
         setAvgRating(response.data.avgRating || 0); // Set the average rating state
       } catch (error) {
         console.error('Error fetching average rating:', error);
@@ -40,7 +40,7 @@ function TProfileContent() {
 
   const handleReviewSubmit = async (value) => {
     try {
-      const response = await axios.post('http://localhost:3001/submitRating', {
+      const response = await axios.post('https://smartfitbackend.onrender.com/submitRating', {
         trainerId: trainerid,
         rating: value, // Pass the rating value directly
       });

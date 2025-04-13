@@ -23,7 +23,7 @@ function TLogin() {
         try{
             e.preventDefault()
 
-            const response = await axios.post("http://localhost:3001/tlogin", user);
+            const response = await axios.post("https://smartfitbackend.onrender.com/tlogin", user);
 
             if (response.data.message) {
                 providerValue.login(response.data.message);

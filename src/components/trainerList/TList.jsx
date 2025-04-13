@@ -29,7 +29,7 @@ export default function TList() {
   useEffect(() => {
     const fetchRatings = async () => {
       try {
-        const res = await axios.get("http://localhost:3001/api/trainers/ratings");
+        const res = await axios.get("https://smartfitbackend.onrender.com/api/trainers/ratings");
   
         // Log the response data to see its structure
         console.log("Response data:", res.data);

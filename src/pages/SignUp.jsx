@@ -22,6 +22,8 @@ import {
   FacebookAuthProvider
 } from '../firebase/firebase.js';
 
+import { useNavigate } from 'react-router-dom'; // ✅ Import useNavigate
+
 const Card = styled(MuiCard)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
@@ -47,7 +49,6 @@ const Card = styled(MuiCard)(({ theme }) => ({
   }),
 }));
 
-
 const SignUpContainer = styled(Stack)(({ theme }) => ({
   height: 'calc((1 - var(--template-frame-height, 0)) * 100dvh)',
   minHeight: '100%',
@@ -72,6 +73,8 @@ const SignUpContainer = styled(Stack)(({ theme }) => ({
 }));
 
 export default function SignUp(props) {
+  const navigate = useNavigate(); // ✅ Initialize useNavigate hook
+  
   // 👉 Google Sign Up
   const handleGoogleSignup = async () => {
     try {
@@ -81,13 +84,14 @@ export default function SignUp(props) {
       console.log('ID Token:', token);
 
       // Send token to backend
-      await fetch('http://localhost:3001/api/auth/firebase-login', {
+      await fetch('https://smartfitbackend.onrender.com/api/auth/firebase-login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ token }),
       });
 
-      // Optional: redirect or notify
+      // Navigate to home route
+      navigate('/'); // ✅ Navigate to home route after successful signup
     } catch (error) {
       console.error('Google Sign Up Error:', error);
     }
@@ -103,13 +107,14 @@ export default function SignUp(props) {
       console.log('🔑 ID Token:', token);
   
       // Optional: send token to your backend
-      await fetch('http://localhost:3001/api/auth/firebase-login', {
+      await fetch('https://smartfitbackend.onrender.com/api/auth/firebase-login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ token }),
       });
   
-      // ✅ Show success or redirect here if needed
+      // ✅ Navigate to home route after successful signup
+      navigate('/'); // ✅ Navigate to home route after successful signup
     } catch (error) {
       if (error.code === 'auth/account-exists-with-different-credential') {
         console.warn('⚠️ Account already exists with different provider');
@@ -141,7 +146,6 @@ export default function SignUp(props) {
       }
     }
   };
-  
 
   return (
     <AppTheme {...props}>

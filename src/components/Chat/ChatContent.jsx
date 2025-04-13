@@ -10,7 +10,7 @@ function ChatContent() {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/api/messages/${trainerid}`);
+        const response = await axios.get(`https://smartfitbackend.onrender.com/api/messages/${trainerid}`);
         setMessages(response.data); // Store messages in state
       } catch (error) {
         console.error('Error fetching messages:', error);
@@ -36,7 +36,7 @@ function ChatContent() {
     }
   
     try {
-      const response = await axios.post('http://localhost:3001/api/messages', {
+      const response = await axios.post('https://smartfitbackend.onrender.com/api/messages', {
         trainerId: trainerid,
         message,
         userId, // Include userId from localStorage

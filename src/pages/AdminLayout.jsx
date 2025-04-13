@@ -90,7 +90,7 @@ export default function AdminLayout(props) {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await fetch('http://localhost:3001/api/users');
+        const res = await fetch('https://smartfitbackend.onrender.com/api/users');
         const data = await res.json();
         setUsers(data);
       } catch (error) {
@@ -107,7 +107,7 @@ export default function AdminLayout(props) {
   useEffect(() => {
     const fetchTrainers = async () => {
       try {
-        const res = await fetch('http://localhost:3001/api/trainers');
+        const res = await fetch('https://smartfitbackend.onrender.com/api/trainers');
         const data = await res.json();
         setTrainers(data);
       } catch (error) {
@@ -123,7 +123,7 @@ export default function AdminLayout(props) {
   useEffect(() => {
     const fetchTemporaryTrainers = async () => {
       try {
-        const res = await fetch('http://localhost:3001/api/temporaryTrainers');
+        const res = await fetch('https://smartfitbackend.onrender.com/api/temporaryTrainers');
         const data = await res.json();
         setTemporaryTrainers(data);
         console.log(data)

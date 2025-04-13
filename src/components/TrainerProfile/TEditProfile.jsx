@@ -18,7 +18,7 @@ function TEditProfile() {
 
         async function getUser() {
             try {
-                await axios.post("http://localhost:3001/tuser", { user: providerValue.user })
+                await axios.post("https://smartfitbackend.onrender.com/tuser", { user: providerValue.user })
                     .then(res => setTrainer(res.data[0]  || {}))
             } catch (error) {
                 console.error("Error fetching user details:", error);
@@ -43,7 +43,7 @@ function TEditProfile() {
         try {
             setShowUsername(true)
 
-            await axios.post("http://localhost:3001/editTrainer", {...trainer, user: providerValue.user})
+            await axios.post("https://smartfitbackend.onrender.com/editTrainer", {...trainer, user: providerValue.user})
                 .then(res => console.log(res))
             
         }catch(err) {

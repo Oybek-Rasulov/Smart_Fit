@@ -8,7 +8,7 @@ function SaveContent({newsid, title, content}) {
     const { socialValue } = useSocial();
 
     async function deleteSave() {
-        await axios.post("http://localhost:3001/deletesave", {phone: providerValue.user, newsid: newsid})
+        await axios.post("https://smartfitbackend.onrender.com/deletesave", {phone: providerValue.user, newsid: newsid})
             .then(res => socialValue.setResponse(res.data.message));
     }
 

@@ -12,7 +12,7 @@ const AdminLogin = () => {
 const handleLogin = async (e) => {
     e.preventDefault();
   
-    const res = await fetch('http://localhost:3001/api/admin-login', {
+    const res = await fetch('https://smartfitbackend.onrender.com/api/admin-login', {
       method: 'POST',
       body: JSON.stringify({ email, password }),
       headers: { 'Content-Type': 'application/json' },

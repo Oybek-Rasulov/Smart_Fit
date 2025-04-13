@@ -17,7 +17,7 @@ function Comments({date, newsid, getOpenComment}) {
         async function storeLike() {
             try {
                 // if(userLike.length > 0) setLike(false)
-                const response = await axios.post("http://localhost:3001/like", {like: like, newsid: newsid, phone: providerValue.user});
+                const response = await axios.post("https://smartfitbackend.onrender.com/like", {like: like, newsid: newsid, phone: providerValue.user});
                 socialValue.setResponse(response.data.message)
                 socialValue.setUserId(response.data.userid)
             } catch (error) {

@@ -7,7 +7,7 @@ export default function GroupChat({ groupId, userId }) {
   const [messageInput, setMessageInput] = useState('');
 
   const fetchMessages = async () => {
-    const res = await fetch(`http://localhost:3001/api/chat-groups/${groupId}/messages`);
+    const res = await fetch(`https://smartfitbackend.onrender.com/api/chat-groups/${groupId}/messages`);
     const data = await res.json();
     setMessages(data);
     console.log(data)
@@ -22,7 +22,7 @@ export default function GroupChat({ groupId, userId }) {
     e.preventDefault();
     if (!messageInput.trim()) return;
 
-    await fetch(`http://localhost:3001/api/chat-groups/${groupId}/messages`, {
+    await fetch(`https://smartfitbackend.onrender.com/api/chat-groups/${groupId}/messages`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ user_id: userId, message: messageInput })

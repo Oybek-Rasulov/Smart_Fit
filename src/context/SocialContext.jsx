@@ -14,7 +14,7 @@ export function SocialProvider({ children }) {
         async function getData() {
             const user = JSON.parse(localStorage.getItem("user"));
 
-            const data = await axios.post("http://localhost:3001/data", {user: user})
+            const data = await axios.post("https://smartfitbackend.onrender.com/data", {user: user})
             setDataComment(data.data.comments);
             setLikes(data.data.likes)
             setSave(data.data.saves)
