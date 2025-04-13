@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import User from '../Reusable/user';
 import ChatGroupsList from './ChatGroupsList';
 import GroupChat from './GroupChat';
 
