@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import assets from "../assets";
-import User from "../Reusable/user"; 
+import User from "../Reusable/User"; 
 import axios from "axios";
 import RatingSize from "../Reusable/RatingSize";
 
