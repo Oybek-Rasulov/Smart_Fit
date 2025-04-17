@@ -1172,9 +1172,14 @@ input {
   }
   
   .chat-form {
+    position: absolute;
+    bottom: 0;
+    left: 17vw;
+    right: 0;
     display: flex;
     padding: 0.5rem;
     border-top: 1px solid #ccc;
+
   }
   
   .chat-form input {
@@ -1530,6 +1535,13 @@ input {
   .trainer-info p {
     font-size: 14px;
     color: #555;
+  }
+
+  .submit-rating {
+    width: 150px;
+    padding: 0.5rem 1rem;
+    background-color: var(--main-color);
+    color: var(--light-color);
   }
   
 /* media */

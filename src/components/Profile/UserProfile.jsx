@@ -14,7 +14,7 @@ function UserProfile() {
     useEffect(() => {
         async function getUser() {
             try {
-                await axios.post("http://localhost:3001/user", { user: providerValue.user })
+                await axios.post("https://smartfitbackend.onrender.com/user", { user: providerValue.user })
                     .then(res => setUserDetails(res.data[0]  || {}))
             } catch (error) {
                 console.error("Error fetching user details:", error);
@@ -29,7 +29,7 @@ function UserProfile() {
         try {
             setShowUsername(true)
 
-            await axios.post("http://localhost:3001/edituser", {...userDetails, user: providerValue.user})
+            await axios.post("https://smartfitbackend.onrender.com/edituser", {...userDetails, user: providerValue.user})
                 .then(res => console.log(res))
             
         }catch(err) {

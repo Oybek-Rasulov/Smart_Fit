@@ -1,7 +1,8 @@
 import { Link } from "react-router" 
 import assets from "../assets"
 
-function TItem({id, name, image, status, uzb, rus, rating}) {
+function TItem({id, name, image, status, uzb, rus, rating, age}) {
+    console.log(name)
     return (
         <Link to={`/tprofile/${id}`}>
                     <div className="t-list">

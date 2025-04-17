@@ -8,6 +8,7 @@ import axios from "axios";
 
 export default function TList() {
   const { trainers } = useTrainers(); // Access trainers directly from the context
+  console.log(trainers)
   const [selectedGoal, setSelectedGoal] = useState("");
   const [ratings, setRatings] = useState({}); // Store ratings by trainer ID
 
@@ -96,11 +97,13 @@ export default function TList() {
             <TItem
               key={index}
               id={trainer.trainerid}
+              phone={trainer.phone}
               name={trainer.name}
               image={trainer.image}
               status={trainer.status}
               uzb={trainer.uzb}
               rus={trainer.rus}
+              age={trainer.age}
               rating={ratings[trainer.trainerid] || 0} // Passing rating for each trainer
             />
           ))}

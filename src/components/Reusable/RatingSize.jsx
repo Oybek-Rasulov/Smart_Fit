@@ -24,7 +24,6 @@ export default function RatingSize({ handleReviewSubmit, trainerid }) {
   const handleSubmitRating = async () => {
     const userData = JSON.parse(localStorage.getItem('user'));
     const userId = userData ? userData.userid : null; // Ensure userId is fetched correctly
-    console.log(userId)
     if (!userId) {
       console.error('User ID is missing!');
       return;
@@ -39,7 +38,7 @@ export default function RatingSize({ handleReviewSubmit, trainerid }) {
       });
   
       // Update the displayed average rating
-      handleReviewSubmit(response.data.newAverageRating);
+      handleReviewSubmit(response.data.avgrating);
       alert('Rating submitted successfully!');
     } catch (error) {
       console.error('Error submitting rating:', error);
@@ -60,7 +59,7 @@ export default function RatingSize({ handleReviewSubmit, trainerid }) {
       />
       <div>Your selected rating: {ratingValue}</div>  {/* Display selected rating */}
       
-      <button onClick={handleSubmitRating} className="back-link">Submit Rating</button> {/* Submit button */}
+      <button onClick={handleSubmitRating} className="submit-rating">Submit Rating</button> {/* Submit button */}
     </Stack>
   );
 }
